@@ -156,10 +156,10 @@ if(!require(tm)) {install.packages("tm"); require(tm)}
 if(!require(RColorBrewer)) {install.packages("RColorBrewer"); require(RColorBrewer)}
 options("scipen"=100, "digits"=8)
 #)2 Loggin to Twitter
-consumer_key="07Z3AsfvVU3bgZ7yY3snSwI45"
-consumer_secret="mokxfy7poLpWvN9vMRE9AYg4HU01M7ZeJ7Hfonc7qRmps8QH88"
-access_token="439584057-xeNtqHK294U5J8mwsnXDz2sIi4tWtnstKzVhPe1t"
-access_secret="3LDSJs8pkkWz2KjqDXqZ5zTNmgfT8NgqdBSOHloNLO65a"
+consumer_key=
+consumer_secret=
+access_token=
+access_secret=
 setup_twitter_oauth(consumer_key, consumer_secret,access_token,access_secret)
 #  setup_twitter_oauth(consumer_key, consumer_secret)
 r_stats<- searchTwitter('factory', n=500)
