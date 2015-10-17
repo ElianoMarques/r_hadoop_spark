@@ -1,0 +1,7 @@
+
+alias hadoop_start="/usr/local/Cellar/hadoop/2.7.1/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/start-yarn.sh"
+alias hadoop_stop="/usr/local/Cellar/hadoop/2.7.1/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/stop-dfs.sh"
+alias zeppelin_start="/Users/elianomarques/Documents/Tools/zeppelin/incubator-zeppelin-master/bin/zeppelin-daemon.sh start"
+alias zeppelin_stop="/Users/elianomarques/Documents/Tools/zeppelin/incubator-zeppelin-master/bin/zeppelin-daemon.sh stop"
+alias spark_ipython_notebook_start="IPYTHON_OPTS="notebook" pyspark"
+
