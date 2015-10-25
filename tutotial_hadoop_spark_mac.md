@@ -8,7 +8,7 @@ brew install Caskroom/cask/java
 #Install latest version of hadoop
 brew install hadoop
 #Edit Edit hadoop-env.sh - file located at /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hadoop-env.sh
-#to check hadoop version simply run hadoop and check the version in the first line
+#to check hadoop version simply run "hadoop version" on shell and check the version in the first line
 #find export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true" and replace with
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kdc="
 ````
