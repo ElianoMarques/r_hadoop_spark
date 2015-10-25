@@ -18,7 +18,8 @@ located here: /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/core-site.xml
 
 ````shell
 vim /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/core-site.xml
-Press I
+Press I then copy paste the below 
+  <configuration>
    <property>
      <name>hadoop.tmp.dir</name>
      <value>/usr/local/Cellar/hadoop/hdfs/tmp</value>
@@ -28,34 +29,35 @@ Press I
      <name>fs.default.name</name>                                     
      <value>hdfs://localhost:9000</value>                             
   </property> 
-Press esc + x + q
+ </configuration>
+Press esc :x
 ````
 ###Edit mapred-site.xml
 located here: /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/mapred-site.xml
 
 ````shell
 vim /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/mapred-site.xml
-Press I
+Press I then copy paste the below
   <configuration>
   <property>
   <name>mapred.job.tracker</name>
   <value>localhost:9010</value>
   </property>
   </configuration>
-Press esc + x + q
+Press esc + :x
 ````
 ###Edit hdfs-site.xml
 located here: /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hdfs-site.xml
 ````shell
 vim /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hdfs-site.xml
-Press I
+Press I then copy paste the below
   <configuration>
   <property>
   <name>dfs.replication</name>
   <value>1</value>
   </property>
   </configuration>
-Press esc + x + q
+Press esc + :x 
 ````
 ####Assuming hadoop higher than 2.5 
 ```shell
@@ -79,7 +81,8 @@ To allow your system to accept login, we have to make it aware of the keys that 
 ````shell
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ````
-####test
+
+####Please restart shell (close and open new one) and test
 ```shell
 ssh localhost
 ```
