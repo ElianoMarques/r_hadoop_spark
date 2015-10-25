@@ -109,3 +109,49 @@ jps
 yarn  // For resource management more information than the web interface. 
 mapred  // Detailed information about jobs
 ````
+
+#Install Spark 
+```shell
+brew install apache-spark
+````
+
+####Example with Spark Ipython
+_**[Download ipython](http://continuum.io/downloads)**_
+
+```shell
+source ~/.profile
+hadoop_start
+hdfs dfs -mkdir /Python
+wget http://www.gutenberg.org/files/30760/30760-0.txt
+mv 30760-0.txt book.txt
+hdfs dfs -put book.txt /Python/
+hdfs dfs -ls /Python/
+IPYTHON_OPTS="notebook" pyspark
+````
+####On ipython run 
+````python
+words = sc.textFile("hdfs://localhost:9000/Python/book.txt")
+
+words.filter(lambda w: w.startswith(" ")).take(5)
+
+counts = words.flatMap(lambda line: line.split(" ")) \
+ .map(lambda word: (word, 1)) \
+ .reduceByKey(lambda a, b: a + b)
+
+counts.saveAsTextFile("hdfs://localhost:9000/Python/spark_output1")
+
+counts.collect()
+````
+Additional links
+#####[https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks)
+#####[https://spark.apache.org/examples.html](https://spark.apache.org/examples.html)
+#####[https://spark.apache.org/docs/0.9.1/python-programming-guide.html](https://spark.apache.org/docs/0.9.1/python-programming-guide.html)
+
+Datasets
+
+#####[https://scans.io/series/modbus-full-ipv4](https://scans.io/series/modbus-full-ipv4)
+#####[http://www.gutenberg.org/](http://www.gutenberg.org/)
+#####[http://meta.wikimedia.org/wiki/Data_dump_torrents#enwiki](http://meta.wikimedia.org/wiki/Data_dump_torrents#enwiki)
+
+
+
