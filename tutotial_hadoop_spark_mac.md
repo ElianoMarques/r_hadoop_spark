@@ -69,7 +69,20 @@ hdfs namenode -format
 ````
 ### SSH Localhost settings
 Nothing needs to be done here if you have already generated ssh keys. To verify just check for the existance of ~/.ssh/id_rsa and the ~/.ssh/id_rsa.pub files. If not the keys can be generated using
-
+````shell
+ssh-keygen -t rsa
+````
+#####Enable Remote Login
+“System Preferences” -> “Sharing”. Check “Remote Login”
+#####Authorize SSH Keys
+To allow your system to accept login, we have to make it aware of the keys that will be used
+````shell
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+````
+####test
+```shell
+ssh localhost
+```
 
 ###Test Hadoop
 ```shell
