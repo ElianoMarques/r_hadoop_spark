@@ -93,4 +93,17 @@ source ~/.profile
 hstart
 ```
 
+###Exercises 
+````shell
+hadoop jar  pi 10 100
+````
+###Links 
+Resource Manager: http://localhost:50070
+JobTracker: http://localhost:8088
+Specific Node Information: http://localhost:8042
+
+Commands:
+jps 
+yarn  // For resource management more information than the web interface. 
+mapred  // Detailed information about jobs
 
