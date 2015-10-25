@@ -65,6 +65,7 @@ alias hstop="/usr/local/Cellar/hadoop/x.x.x/sbin/stop-yarn.sh;/usr/local/Cellar/
 ````
 Test Hadoop
 ```shell
+source ~/.profile
 hstart
 ```
 
