@@ -1,14 +1,17 @@
- #Install brew
- ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
- #Install java
- brew install Caskroom/cask/java
- #Install latest version of hadoop
- brew install hadoop
- #Edit Edit hadoop-env.sh - file located at /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hadoop-env.sh
- #to check hadoop version simply run hadoop and check the version in the first line
- #find export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true" and replace with
- export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kdc="
- 
+
+----
+#Install brew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#Install java
+brew install Caskroom/cask/java
+#Install latest version of hadoop
+brew install hadoop
+#Edit Edit hadoop-env.sh - file located at /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hadoop-env.sh
+#to check hadoop version simply run hadoop and check the version in the first line
+#find export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true" and replace with
+export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kdc="
+----
+
  #Edit Core-site.xml 
  #/usr/local/Cellar/hadoop/2.6.0/libexec/etc/hadoop/core-site.xml 
  
