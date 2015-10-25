@@ -13,7 +13,7 @@ brew install hadoop
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kdc="
 ````
 
-Edit Core-site.xml 
+###Edit Core-site.xml 
 located here: /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/core-site.xml 
 
 ````shell
@@ -30,7 +30,7 @@ Press I
   </property> 
 Press esc + x + q
 ````
-Edit mapred-site.xml
+###Edit mapred-site.xml
 located here: /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/mapred-site.xml
 
 ````shell
@@ -44,7 +44,7 @@ Press I
   </configuration>
 Press esc + x + q
 ````
-Edit hdfs-site.xml
+###Edit hdfs-site.xml
 located here: /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hdfs-site.xml
 ````shell
 vim /usr/local/Cellar/hadoop/x.x.x/libexec/etc/hadoop/hdfs-site.xml
@@ -57,13 +57,21 @@ Press I
   </configuration>
 Press esc + x + q
 ````
-Assuming hadoop higher than 2.5 
+####Assuming hadoop higher than 2.5 
 ```shell
 vim ~/.profile 
 alias hstart="/usr/local/Cellar/hadoop/x.x.x/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/x.x.0/sbin/start-yarn.sh"
 alias hstop="/usr/local/Cellar/hadoop/x.x.x/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/x.x.0/sbin/stop-dfs.sh"
 ````
-Test Hadoop
+###Format hdfs
+```shell
+hdfs namenode -format
+````
+### SSH Localhost settings
+Nothing needs to be done here if you have already generated ssh keys. To verify just check for the existance of ~/.ssh/id_rsa and the ~/.ssh/id_rsa.pub files. If not the keys can be generated using
+
+
+###Test Hadoop
 ```shell
 source ~/.profile
 hstart
