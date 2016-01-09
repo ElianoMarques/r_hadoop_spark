@@ -114,6 +114,10 @@ mapred  // Detailed information about jobs
 ```shell
 brew install apache-spark
 ````
+######Setting spark home 
+````
+export SPARK_HOME='/usr/local/Cellar/apache-spark/1.5.1'
+````
 
 ####Example with Spark Ipython
 _**[Download ipython](http://continuum.io/downloads)**_
