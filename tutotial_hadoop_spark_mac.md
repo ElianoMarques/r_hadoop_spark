@@ -123,6 +123,15 @@ export SPARK_HOME='/usr/local/Cellar/apache-spark/1.5.1'
 _**[Download ipython](http://continuum.io/downloads)**_
 
 ```shell
+vim ~/.profile
+export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1"
+export PYTHONPATH="$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.9-src.zip:${PYTHONPATH}"
+export PATH=$HOME/anaconda/bin:$PATH
+export PYSPARK_SUBMIT_ARGS="--master local --executor-memory 2g --driver-memory 4g --num-executors 4 --conf spark.serializer=org.apache.spark.serializer.KryoSerialize r --conf spark.akka.threads=32 --packages com.databricks:spark-csv_2.11:1.4.0 --conf spark.akka.frameSize=500 pyspark-shell"
+export PYSPARK_PYTHON=$HOME/anaconda/bin
+alias pyspark_nb="sudo IPYTHON_OPTS="notebook" pyspark"
+:wq
+
 source ~/.profile
 hadoop_start
 hdfs dfs -mkdir /Python
@@ -131,6 +140,8 @@ mv 30760-0.txt book.txt
 hdfs dfs -put book.txt /Python/
 hdfs dfs -ls /Python/
 IPYTHON_OPTS="notebook" pyspark
+
+alias pyspark_notebook_start="sudo IPYTHON_OPTS="notebook" pyspark"
 ````
 ####On ipython run 
 ````python
